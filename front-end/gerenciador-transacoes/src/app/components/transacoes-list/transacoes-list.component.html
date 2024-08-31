@@ -1,0 +1,8 @@
+<p>transacoes-list works!</p>
+<ul>
+  <li *ngFor="let transacao of transacoes">
+    {{ transacao.descricao }} - {{ transacao.tipo }} - {{ transacao.valor | currency }} - {{ transacao.categoria }}
+    <button (click)="deleteTransacao(transacao.id)">Excluir</button>
+    <button routerLink="/edit/{{ transacao.id }}">Editar</button>
+  </li>
+</ul>
