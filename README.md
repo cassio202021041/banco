@@ -15,4 +15,14 @@ ng serve
 
 onde iniciará o projeto na porta: localhost:4200
 
+#criação  modulo conta
+ng generate module nomeModulo
+
+#criaçao conta.ts
+
+#criação service conta
+ng generate service NomeService
+
+#criação dos componentes Create, read, update e delete
+ng generate compontent nomeComponent
 
