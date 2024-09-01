@@ -23,7 +23,7 @@ export class ContaService {
   }
 
   create(conta: Conta): Observable<any> {
-    return this.httpClient.post(this.apiURL + '/contas/', JSON.stringify(conta), this.httpOptions)
+    return this.httpClient.conta(this.apiURL + '/contas/', JSON.stringify(conta), this.httpOptions)
       .pipe(catchError(this.errorHandler));
   }
 
