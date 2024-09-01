@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Router } from 'express';
 import { ContaService } from '../conta.service';
+import { Router } from '@angular/router';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-create',
@@ -11,15 +11,17 @@ import { ContaService } from '../conta.service';
 export class CreateComponent {
   form!:FormGroup;
 
-  constructor( public contaService:ContaService, private router:Router){
+  constructor( public contaService:ContaService, private router:Router /*private fb: FormBuilder*/){
 
   }
 
   ngOnInit():void{
-    this.form = new FormGroup({
+      this.form = new FormGroup({
       title: new FormControl('', [Validators.required]),
-      body:new FormControl('',Validators.required)
+      body:new FormControl('',Validators.required),
+
     })
+
   }
 
   get f(){
