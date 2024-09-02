@@ -1,0 +1,65 @@
+<!-- CARDS SECTION DESKTOP -->
+<section
+  class="hidden md:flex justify-evenly gap-8 lg:justify-between lg:gap-2 items-center flex-wrap md mb-4"
+>
+  <analytical-card
+    class="w-full max-w-80 md:w-1/2 xl:w-1/5 xl:min-w-80"
+    main_title="Total de receita"
+    [value]="analytical_income_total"
+    [subtitle_operation]="'up'"
+  />
+  <analytical-card
+    class="w-full max-w-80 md:w-1/2 xl:w-1/5 xl:min-w-80"
+    [main_title]="'Total de despesas'"
+    [value]="analytical_expense_total"
+    [subtitle_operation]="'up'"
+  />
+  <analytical-card
+    class="w-full max-w-80 md:w-1/2 xl:w-1/5 xl:min-w-80"
+    [main_title]="'Último registro'"
+    [value]="analytical_last_register_data"
+    [subtitle_operation]="'down'"
+    [subtitle]="analytical_last_register_name"
+  />
+  <analytical-card
+    class="w-full max-w-80 md:w-1/2 xl:w-1/5 xl:min-w-80"
+    [main_title]="'Análise rápida'"
+    [value]="analytical_percentage_data"
+    [subtitle_operation]="'tip'"
+    [subtitle]="'Total de gastos'"
+  />
+</section>
+<!-- CARDS CAROUSEL SECTION MOBILE -->
+<section
+  class="flex md:hidden justify-evenly gap-8 lg:justify-between lg:gap-2 items-center flex-wrap md mb-8"
+>
+  <analytical-card
+    class="w-full max-w-80 md:w-1/2 xl:w-1/5 xl:min-w-80"
+    [main_title]="'Análise rápida'"
+    [value]="analytical_percentage_data"
+    [subtitle_operation]="'tip'"
+    [subtitle]="'Total de gastos'"
+  />
+</section>
+<!-- CARDS CAROUSEL SECTION MOBILE -->
+<section
+  class="w-full h-full flex justify-between items-center flex-wrap-reverse"
+>
+  <div class="flex w-full justify-center items-center md:w-2/4">
+    <table-component
+      class="w-full"
+      [title]="'Tabela de contas do final do mês'"
+      [headers]="headers"
+      [footer_rows]="footer_rows"
+      [rows]="rows"
+    />
+  </div>
+  <div class="flex w-full justify-center items-center md:w-2/4">
+    <bar-chart
+      class="w-full px-6"
+      [chartTitle]="'Tabela de contas do final do mês'"
+      [chartLabels]="chartLabels"
+      [chartDataSets]="chartData"
+    />
+  </div>
+</section>
