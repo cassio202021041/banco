@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 class CategoriesController extends Controller
 {
+    protected $category;
+
     public  function __construct(Category $category)
     {
         $this->category = $category;
@@ -52,7 +54,7 @@ class CategoriesController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
+        dd($request);
         $request->validate($this->category->rules(), $this->category->feedback());
         $category = $this->category->create([
             "name" => $request->name,

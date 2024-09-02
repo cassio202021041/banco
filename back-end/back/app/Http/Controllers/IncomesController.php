@@ -7,6 +7,9 @@ use Illuminate\Http\Request;
 
 class IncomesController extends Controller
 {
+
+    public $income;
+
     public  function __construct(Income $income)
     {
         $this->income = $income;
@@ -52,7 +55,7 @@ class IncomesController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
+        dd($request);
         $request->validate($this->income->rules(), $this->income->feedback());
         $income = $this->income->create([
             "name" => $request->name,

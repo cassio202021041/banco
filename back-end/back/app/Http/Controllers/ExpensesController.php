@@ -7,6 +7,8 @@ use Illuminate\Http\Request;
 
 class ExpensesController extends Controller
 {
+    protected $expense;
+
 
     public  function __construct(Expense $expense)
     {
@@ -53,7 +55,7 @@ class ExpensesController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
+        dd($request);
         $request->validate($this->expense->rules(), $this->expense->feedback());
         $expense = $this->expense->create([
             "name" => $request->name,

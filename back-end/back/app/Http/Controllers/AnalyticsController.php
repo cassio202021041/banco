@@ -9,6 +9,9 @@ use Illuminate\Support\Facades\DB;
 
 class AnalyticsController extends Controller
 {
+    protected $expense;
+    protected $income;
+
     public  function __construct(Expense $expense, Income $income)
     {
         $this->expense = $expense;

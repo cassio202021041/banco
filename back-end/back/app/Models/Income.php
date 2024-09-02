@@ -35,5 +35,8 @@ class Income extends Model
             "numeric" => "O campo :attribute deve ser do tipo numerico",
             "min" => "O campo :attribute deve ser pelo menos o valor minimo para validação"
         ];
+
     }
+    
+
 }
