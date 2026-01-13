@@ -39,7 +39,7 @@ class AnalyticsController extends Controller
         $result["incomes"] = $incomes;
         $result["last_income"] = $last_income;
         $result["incomes_total"] = $incomes_total;
-        $result["percentage_acquired"] = $expenses_total / $incomes_total * 100;
+        $result["percentage_acquired"] = $incomes_total > 0 ? ($expenses_total / $incomes_total * 100) : 0;
         return response()->json($result, 200);
     }
 }

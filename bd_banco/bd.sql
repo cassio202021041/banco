@@ -1,1 +1,0 @@
-SELECT * FROM banco.password_reset_tokens;
